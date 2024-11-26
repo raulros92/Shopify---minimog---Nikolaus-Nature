@@ -2,3 +2,63 @@
   All custom CSS in this file will be kept when updating the theme
   Write your custom CSS below
 {% endcomment %}
+
+/* CUSTOM CSS - FYNEST */
+
+/* Header */
+
+.m-menu__arrow {
+    transition: var(--m-duration-default, .25s) transform;
+    display: none;
+}
+
+.m-menu__link--main:after {
+  display: none;
+}
+
+.m-menu__link--main:hover {
+  font-weight: 700;
+}
+
+header .m-mega-menu {
+  border: 0.5px solid rgb(223, 238, 215);
+  border-radius: 20px;
+  backdrop-filter: blur(80px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.language-selector {
+  display: flex;
+  align-items: center;
+  font-size: 1rem; 
+}
+
+.language-option {
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.language-option.selected-language {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1440px) {
+  header .m-header__left {
+    margin-left: 2rem;
+  }
+
+  header .m-header__right {
+    margin-right: 2rem;
+  }
+
+  header .m-menu__link {
+    font-size: 18px;
+  }
+
+  .language-selector {
+    font-size: 18px;
+  }
+}
+
+
+

@@ -268,9 +268,6 @@
               </div>
               <div class="m-header__right m:w-5/12">
                 {% liquid
-                  if show_language_switcher
-                    render 'language-switcher', box_size: 'm:hidden xl:m:block'
-                  endif
 
                   if show_currency_switcher
                     render 'currency-switcher', box_size: 'm:hidden xl:m:block'
@@ -295,6 +292,10 @@
 
                   if show_cart_icon
                     render 'cart'
+                  endif
+
+                  if show_language_switcher
+                    render 'language-switcher-custom', box_size: 'm:hidden xl:m:block'
                   endif
                 %}
               </div>

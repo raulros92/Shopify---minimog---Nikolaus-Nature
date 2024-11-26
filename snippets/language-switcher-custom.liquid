@@ -1,0 +1,40 @@
+{%- comment -%}
+{% unless form_id %} 
+    {% assign form_id = 'language-form' %} 
+{% endunless %}
+{%- endcomment -%}
+
+{%- liquid 
+  assign show_language_selector = true
+-%}
+
+{% if show_language_selector %}
+  {% liquid
+    assign min = 65
+    assign max = 80
+    assign diff = max | minus: min
+    assign randomNumber = "now" | date: "%N" | modulo: diff | plus: min
+  %}
+  <div class="m-switcher-dropdown m-language-switcher {{ box_size }}">
+    {% assign form_id = 'localization_form-' | append: randomNumber %}
+    {% form 'localization', data-localization-form: '', id: form_id %}
+      <input type="hidden" name="locale_code" value="{{ form.current_locale.iso_code }}" data-localization-input/>
+      
+      <div class="language-selector">
+        {%- for language in localization.available_languages -%}
+          <span 
+            class="language-option {% if language.iso_code == localization.language.iso_code %} selected-language {% endif %}"
+            data-locale="{{ language.iso_code }}"
+            onclick="this.closest('form').querySelector('input[name=locale_code]').value = this.getAttribute('data-locale'); this.closest('form').submit();"
+          >
+            {{ language.iso_code | upcase }}
+          </span>
+          {% if forloop.index == 1 %}
+            <span>|</span>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+
+    {% endform %}
+  </div>
+{% endif %}
