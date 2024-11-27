@@ -95,20 +95,138 @@ section .m-tab-header:after {
   line-height: 20px;
 }
 
-.product-descripcion-custom {
+.product-description-custom {
   font-size: 1rem;
   padding-top: 1rem;
 }
 
 @media screen and (max-width: 779px) {
-  .product-descripcion-custom {
+  .product-description-custom {
     display: none;
   }
 }
 
-
 /* Image cards */
+
+.m-image-card__inner {
+  border-radius: 50px;
+  position: relative;
+}
+
+.m-image-card__inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.m-image-card__inner:hover::after {
+  background: rgba(0, 0, 0, 0.1);
+}
 
 .m-hover-box:nth-child(4) {
   grid-column: 3 / 5;
 }
+
+@media screen and (max-width: 779px) {
+  .m-image-card__inner::after {
+    display: none;
+  }
+
+  .m-hover-box:nth-child(4) {
+    grid-column: 3 / 4;
+  }
+  .m-richtext__subtitle {
+    display: none;
+  }
+}
+
+/* Collapsible tabs custom */
+
+.collapsible-tabs-custom__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 91.5px;
+  margin-right: 91.5px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.m-section-py-custom {
+  padding-right: 150px;
+}
+
+.m-collapsible__content-area {
+  padding-left: 150px;
+}
+
+.m-collapsible--button {
+  padding: 32px 0 8px;
+}
+
+.m-collapsible--button > span {
+  font-weight: 700;
+}
+
+.content-group {
+  padding-bottom: 50px;
+}
+
+.content-group > h2 {
+  padding-bottom: 16px;
+}
+
+.content-group > p {
+  padding-bottom: 32px;
+}
+
+@media screen and (max-width: 1280px) {
+  .collapsible-tabs-custom__wrapper {
+  margin-left: 0;
+  margin-right: 0;
+  }
+  .m-section-py-custom {
+    padding-right: 50px;
+  }
+
+  .m-collapsible__content-area {
+    padding-left: 50px;
+  }
+}
+
+@media screen and (max-width: 779px) {
+  .collapsible-tabs-custom__wrapper {
+    grid-template-columns: repeat(1, 1fr);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    gap: 20px;
+  }
+  .m-section-py-custom {
+    padding-right: 0;
+  }
+
+  .m-collapsible__content-area {
+    padding-left: 0;
+  }
+
+  .content-group > h2 {
+    text-align: center;
+  }
+
+  .button-custom {
+    font-size: 14px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+
