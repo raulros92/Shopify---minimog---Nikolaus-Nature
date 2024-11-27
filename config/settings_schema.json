@@ -772,9 +772,9 @@
     ]
   },
   {
-		"name": "Animations",
-		"settings": [
-			{
+    "name": "Animations",
+    "settings": [
+      {
         "type": "checkbox",
         "id": "page_transition",
         "default": true,
@@ -808,35 +808,35 @@
         "label": "Custom logo",
         "info": " Should use square sized images. Example: 64x64, 128x128"
       },
-			{
-				"type": "header",
-				"content": "Visible in the view"
-			},
-			{
-				"type": "select",
-				"id": "animations",
-				"label": "Animation",
-				"default": "none",
-				"options": [
-					{"value": "none", "label": "None"},
-					{"value": "fade-in", "label": "Fade in"},
-					{"value": "fade-in-up", "label": "Fade in up"},
-					{"value": "fade-in-left", "label": "Fade in left"},
-					{"value": "fade-in-right", "label": "Fade in right"}
-				]
-			},
-			{
-				"type": "range",
-				"id": "animation_duration",
-				"label": "Duration",
-				"default": 0.6,
-				"min": 0.1,
-				"max": 1,
-				"unit": "(s)",
-				"step": 0.1
-			}
-		]
-	},
+      {
+        "type": "header",
+        "content": "Visible in the view"
+      },
+      {
+        "type": "select",
+        "id": "animations",
+        "label": "Animation",
+        "default": "none",
+        "options": [
+          { "value": "none", "label": "None" },
+          { "value": "fade-in", "label": "Fade in" },
+          { "value": "fade-in-up", "label": "Fade in up" },
+          { "value": "fade-in-left", "label": "Fade in left" },
+          { "value": "fade-in-right", "label": "Fade in right" }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "animation_duration",
+        "label": "Duration",
+        "default": 0.6,
+        "min": 0.1,
+        "max": 1,
+        "unit": "(s)",
+        "step": 0.1
+      }
+    ]
+  },
   {
     "name": "Product card",
     "settings": [
@@ -873,6 +873,10 @@
           {
             "value": "5",
             "label": "Style 5"
+          },
+          {
+            "value": "custom",
+            "label": "Custom style"
           }
         ]
       },
@@ -2503,7 +2507,7 @@
         "type": "richtext",
         "id": "agree_text",
         "label": "Text",
-        "default": "<p>I agree with the <a href=\"#\" title=\"#\">Terms & conditions<\/a><\/p>"
+        "default": "<p>I agree with the <a href=\"#\" title=\"#\">Terms & conditions</a></p>"
       },
       {
         "type": "checkbox",

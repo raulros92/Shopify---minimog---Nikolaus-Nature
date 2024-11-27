@@ -257,6 +257,8 @@
                                   render 'product-card-4', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect
                                 when '5'
                                   render 'product-card-5', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect
+                                when 'custom'
+                                  render 'product-card-custom', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect
                               endcase
                             %}
                           </div>
@@ -273,6 +275,8 @@
                                 render 'product-card-4', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect, column_wrapper: true
                               when '5'
                                 render 'product-card-5', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect, column_wrapper: true
+                              when 'custom'
+                                render 'product-card-custom', product: product, image_ratio: image_ratio, show_vendor: show_vendor, index: forloop.index, animated: animated, animation_effect: animation_effect
                             endcase
                           %}
                         {% endif %}
@@ -584,6 +588,10 @@
         {
           "value": "5",
           "label": "Style 5"
+        },
+        {
+          "value": "custom",
+          "label": "custom Style"
         }
       ]
     },
