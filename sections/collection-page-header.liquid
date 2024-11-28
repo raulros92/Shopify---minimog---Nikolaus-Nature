@@ -347,11 +347,16 @@
       "label": "Show description",
       "default": false
     },
-    {
-      "type": "richtext",
-      "id": "collection_all_desc",
-      "label": "Description for all products"
-    },
+    // This comes by default with the theme, but it is a mistake, this create 
+    // a richtext content to add text from the editor, however, this is not actually
+    // how the code was made for. What the functionality does is to take the description
+    // that the user adds from the Shopify Admin, in the collection section, not in the
+    // Shopify editor (blocks). So that block is irrelevant and generates confusion.
+    // I guess they will fix this in the next versions by removing it, as I just did. {
+    //   "type": "richtext",
+    //   "id": "collection_all_desc",
+    //   "label": "Description for all products"
+    // },
     {
       "type": "header",
       "content": "Section Padding"

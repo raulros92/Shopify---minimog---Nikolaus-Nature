@@ -12,46 +12,147 @@
     "collection-header": {
       "type": "collection-page-header",
       "settings": {
-        "color_scheme": "dark",
-        "container": "container-fluid",
-        "layout": "inside",
+        "color_scheme": "default",
+        "container": "w-full",
+        "layout": "without_breadcrumb",
+        "bg_image": "shopify://shop_images/blog-teaser-1713255874-bild-900.png",
         "image_position": "background",
         "enable_parallax": false,
         "parallax_direction": "vertical",
-        "text_alignment": "center",
-        "text_color": "inherit",
+        "text_alignment": "left",
+        "text_color": "black",
         "upper_title": false,
         "show_desc": true,
-        "collection_all_desc": "",
-        "padding_top": 36,
-        "padding_bottom": 50,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "enable_bg_zoom_effect": true
       }
     },
-    "main": {
-      "type": "main-collection-product-grid",
+    "icons_custom_Qz4e6R": {
+      "type": "icons-custom",
       "blocks": {
-        "banner_promotion_KppNc9": {
-          "type": "banner_promotion",
+        "image_dKin9p": {
+          "type": "image",
           "settings": {
-            "color_scheme": "dark",
-            "text_size": "medium",
-            "text_color": "white",
-            "link": "",
-            "content_position": "bottom_center",
-            "content_alignment": "center",
-            "title": "SALE UP TO 25% OFF",
-            "subtitle": "Online Exclusive",
-            "button_label": "Shop The Sale",
-            "button_style": "m-button--primary",
-            "button_size": "",
-            "button_fixed": false
+            "image": "shopify://shop_images/Zeichenflache_1_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Psyche Stress"
+          }
+        },
+        "image_iM9PnJ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_2_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Immunkraft Allergie"
+          }
+        },
+        "image_tcYLkj": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_4_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Beauty"
+          }
+        },
+        "image_AqLbYr": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_5_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Verdanuung"
+          }
+        },
+        "image_3DcmnE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_6_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Bewegung"
+          }
+        },
+        "image_r9tr43": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_7_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Herz Durchblutung"
+          }
+        },
+        "image_Ay4HLG": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_8_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Stoffwechsel Detox"
+          }
+        },
+        "image_46DYG6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_9_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Zähne"
+          }
+        },
+        "image_wz8jRX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Zeichenflache_3_3x-100.png",
+            "image_by_url": "",
+            "image_link": "",
+            "max_width": "62px",
+            "image_caption": "Frau Mann"
           }
         }
       },
       "block_order": [
-        "banner_promotion_KppNc9"
+        "image_dKin9p",
+        "image_iM9PnJ",
+        "image_tcYLkj",
+        "image_AqLbYr",
+        "image_3DcmnE",
+        "image_r9tr43",
+        "image_Ay4HLG",
+        "image_46DYG6",
+        "image_wz8jRX"
       ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "header_alignment": "center",
+        "container": "container-fluid",
+        "color_scheme": "default",
+        "item_per_row": 9,
+        "column_gap": 30,
+        "row_gap": 30,
+        "column_gap_mobile": 10,
+        "row_gap_mobile": 10,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "custom_class": "",
+        "animations": "inherit"
+      }
+    },
+    "main": {
+      "type": "main-collection-product-grid",
       "custom_css": [
         ".m-banner-promotion {order: 3 !important; margin-top: 30px; margin-bottom: 0;}",
         ".m-collection-filters-form {margin-bottom: 0;}"
@@ -59,8 +160,8 @@
       "settings": {
         "container": "container-fluid",
         "grid_layout": "grid",
-        "grid_columns": "4",
-        "show_columns_switcher": true,
+        "grid_columns": "3",
+        "show_columns_switcher": false,
         "pagination_limit": 12,
         "paginate_type": "paginate",
         "show_sorting": true,
@@ -77,28 +178,101 @@
         "color_swatches_design": "list"
       }
     },
-    "recent-viewed": {
-      "type": "recent-viewed-products",
+    "image_with_text_1_E6pRkp": {
+      "type": "image-with-text-1",
+      "blocks": {
+        "item_RRJdac": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/header-bentobox-big-2024-1728635042.png",
+            "link": "",
+            "content_position": "top_left",
+            "content_alignment": "center",
+            "text_size": "small",
+            "text_color": "white",
+            "title": "Ginkgo-Power",
+            "subtitle": "Unterstütze deine geistige Fitness mir NN Ginkgo biloba - für mehr Fokus und Vitalität",
+            "button_label": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        },
+        "item_e7zEX3": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/blog-teaser-1728890798-bild-900.png",
+            "link": "",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "small",
+            "text_color": "white",
+            "title": "Schönheit von innen",
+            "subtitle": "",
+            "button_label": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        },
+        "item_3bjK4w": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/blog-teaser-1699535620-bild-600_4bb635ea-b93f-4683-a19f-abacc3977b51.png",
+            "link": "",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "small",
+            "text_color": "white",
+            "title": "Anti-Aging",
+            "subtitle": "",
+            "button_label": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        },
+        "item_nwPfEE": {
+          "type": "item",
+          "settings": {
+            "color_scheme": "",
+            "image": "shopify://shop_images/header-bentobox-big-2024-1727188511_78d02c6e-a20e-473d-a3ac-057f9489d7a4.png",
+            "link": "",
+            "content_position": "bottom_left",
+            "content_alignment": "left",
+            "text_size": "small",
+            "text_color": "white",
+            "title": "9 Tipps für ein Starkes Immunsystem",
+            "subtitle": "So bleibst du in der kalten Jahreszeit so Stark wie ein Superheld",
+            "button_label": "",
+            "button_style": "m-button--primary",
+            "button_size": "",
+            "button_fixed": false
+          }
+        }
+      },
+      "block_order": [
+        "item_RRJdac",
+        "item_e7zEX3",
+        "item_3bjK4w",
+        "item_nwPfEE"
+      ],
       "settings": {
+        "heading": "",
+        "heading_size": "h3",
+        "subheading": "",
+        "description": "",
+        "header_alignment": "center",
         "container": "container-fluid",
         "color_scheme": "",
-        "heading": "Recently Viewed Products",
-        "heading_size": "h3",
-        "text_align": "left",
-        "limit": 8,
-        "columns": 5,
-        "column_gap": 30,
-        "pcard_layout": "",
-        "pcard_image_ratio": "",
-        "show_vendor": false,
-        "hide_title": false,
-        "enable_slider": true,
-        "show_pagination": false,
-        "show_navigation": false,
-        "mobile_disable_slider": false,
+        "layout": "layout_1",
+        "gap": 10,
         "use_scroll_mobile": true,
-        "item_gap_mobile": 16,
-        "padding_top": 40,
+        "mobile_gap": 10,
+        "padding_top": 50,
         "padding_bottom": 100,
         "custom_class": "",
         "animations": "inherit"
@@ -107,7 +281,8 @@
   },
   "order": [
     "collection-header",
+    "icons_custom_Qz4e6R",
     "main",
-    "recent-viewed"
+    "image_with_text_1_E6pRkp"
   ]
 }
