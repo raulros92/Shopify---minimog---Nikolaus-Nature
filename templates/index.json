@@ -742,12 +742,25 @@
     "testimonials_zU8YcY": {
       "type": "testimonials",
       "blocks": {
+        "testimonial_zUgdLG": {
+          "type": "testimonial",
+          "settings": {
+            "title": "",
+            "description": "<p>\"Short dress in a printed viscose weave with a round neckline, opening with a button at the back of the Seams with small frill trims at the waist and on the sleeves and skirt. Unlined.\"</p>",
+            "footer": "<p>Dean D. US</p>",
+            "image": "shopify://shop_images/img_experte_home_03_v2.png",
+            "image_text": "",
+            "image_link": "",
+            "product": ""
+          }
+        },
         "testimonial_qrAFHm": {
           "type": "testimonial",
           "settings": {
             "title": "",
             "description": "<p>Our approach is simple yet effective: we listen, we ideate, we create, and we deliver. By understanding your goals and challenges, we develop strategies that not only meet but exceed your expectations.</p>",
             "footer": "<p>J. R. R. Tolkien</p>",
+            "image": "shopify://shop_images/img_experte_home_02_v2.png",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -759,6 +772,7 @@
             "title": "",
             "description": "<p>Our approach is simple yet effective: we listen, we ideate, we create, and we deliver. By understanding your goals and challenges, we develop strategies that not only meet but exceed your expectations.</p>",
             "footer": "<p>maX mUSTERMANN</p>",
+            "image": "shopify://shop_images/img_experte_home_01_v2.png",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -770,6 +784,7 @@
             "title": "",
             "description": "<p>Our approach is simple yet effective: we listen, we ideate, we create, and we deliver. By understanding your goals and challenges, we develop strategies that not only meet but exceed your expectations.</p>",
             "footer": "<p>Dean D. US</p>",
+            "image": "shopify://shop_images/img_experte_home_03_v2.png",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -781,6 +796,7 @@
             "title": "",
             "description": "<p>Our approach is simple yet effective: we listen, we ideate, we create, and we deliver. By understanding your goals and challenges, we develop strategies that not only meet but exceed your expectations.</p>",
             "footer": "<p>Michael Jackson</p>",
+            "image": "shopify://shop_images/img_experte_home_02_v2.png",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -792,6 +808,7 @@
             "title": "",
             "description": "<p>Our approach is simple yet effective: we listen, we ideate, we create, and we deliver. By understanding your goals and challenges, we develop strategies that not only meet but exceed your expectations.</p>",
             "footer": "<p>Robert De Niro</p>",
+            "image": "shopify://shop_images/img_experte_home_01_v2.png",
             "image_text": "",
             "image_link": "",
             "product": ""
@@ -799,6 +816,7 @@
         }
       },
       "block_order": [
+        "testimonial_zUgdLG",
         "testimonial_qrAFHm",
         "testimonial_FgnLBT",
         "testimonial_YRXRkY",
@@ -813,7 +831,7 @@
         "header_alignment": "center",
         "container": "container-fluid",
         "color_scheme": "scheme-175c1aaf-94e7-4ef6-96f8-03f6c5048512",
-        "design": "testimonials-1",
+        "design": "testimonials-6",
         "show_stars": true,
         "autorotate": false,
         "show_navigation": false,
