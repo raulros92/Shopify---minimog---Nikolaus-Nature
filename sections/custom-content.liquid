@@ -517,7 +517,7 @@
                     </div>
                   {% when 'image_card' %}
                     {{ 'component-image-card.css' | asset_url | stylesheet_tag }}
-                    {% render 'image-card',
+                    {% render 'image-card-custom',
                       block: block,
                       grid_columns: 'm:w-full',
                       stack_on_mobile: scrollMobile,

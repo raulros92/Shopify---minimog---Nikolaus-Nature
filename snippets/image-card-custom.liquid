@@ -1,0 +1,139 @@
+{% liquid
+  assign image = block.settings.image
+  assign mobile_image = block.settings.mobile_image
+  assign text_color = block.settings.text_color
+  assign button_fixed = block.settings.button_fixed
+
+  assign heading_size = block.settings.text_size | replace: 'small', 'h3' | replace: 'medium', 'h2' | replace: 'large', 'h1'
+  assign subtext_size = block.settings.text_size | replace: 'small', 'h6' | replace: 'medium', 'h6' | replace: 'large', 'h5'
+
+  assign heading_color = ''
+  if text_color != 'inherit'
+    assign heading_color = heading_color | append: 'm:text-' | append: text_color
+  endif
+
+  assign content_position = ''
+  case block.settings.content_position
+    when 'top_left'
+      assign content_position = ' m:items-start m:justify-start'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-start sm:m:justify-start'
+      endif
+    when 'top_right'
+      assign content_position = ' m:justify-end m:items-start'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-start sm:m:justify-end'
+      endif
+    when 'top_center'
+      assign content_position = ' m:items-start m:justify-center'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-start sm:m:justify-center'
+      endif
+    when 'bottom_left'
+      assign content_position = ' m:items-end m:justify-start'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-end sm:m:justify-start'
+      endif
+    when 'bottom_right'
+      assign content_position = ' m:items-end m:justify-end'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-end sm:m:justify-end'
+      endif
+    when 'bottom_center'
+      assign content_position = ' m:justify-center m:items-end'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-end sm:m:justify-center'
+      endif
+    when 'center_left'
+      assign content_position = ' m:justify-start m:items-center'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-center sm:m:justify-start'
+      endif
+    when 'center_right'
+      assign content_position = ' m:items-center m:justify-end'
+      if stack_on_mobile == true
+        assign content_position = ' m:justify-center sm:m:items-center sm:m:justify-end'
+      endif
+    else
+        assign content_position = ' m:items-center m:justify-center'
+  endcase
+
+  assign use_content_above = block.settings.use_content_above
+
+  if mobile_image == blank
+    assign mobile_image = image
+  endif
+  
+  assign classes = 'm-image-card' | append: ' ' | append: image_card_class | append: ' ' | append: grid_columns 
+  if stack_on_mobile == true or use_content_above == false
+    assign classes = classes | append: ' m-image-card--content-stack'
+  endif
+  if button_fixed == true
+    assign classes = classes | append: ' m-image-card--button-fixed'
+  endif
+
+  assign color_scheme_classes = ' m-gradient m-color-' | append: color_scheme
+
+  assign aspect_ratio = image.aspect_ratio | default: 1
+  assign aspect_ratio_mobile = mobile_image.aspect_ratio | default: 1
+
+  assign loading = loading | default: 'lazy'
+  assign fetchpriority = fetchpriority | default: 'low'
+
+  assign color_scheme_inherit = false
+  if parent_color_scheme != nil and color_scheme == parent_color_scheme
+    assign color_scheme_inherit = true
+  endif
+%}
+<div class="{{ classes }}{% if color_scheme_inherit %} color-scheme-inherit{% endif %}">
+  <div class="m-image-card__inner {{ color_scheme_classes }}{% unless color_scheme_inherit %} m:blocks-radius{% endunless %}">
+    <div class="m-media__wrapper">
+      <{% if block.settings.link %}a href="{{ block.settings.link | default: '#' }}"{% else %}div{% endif %} class="m-image-card__img{% if color_scheme_inherit %} m:blocks-radius{% endif %} m:block m:h-full" style="--aspect-ratio: {{ aspect_ratio }}; --aspect-ratio-mobile: {{ aspect_ratio_mobile }};">
+        <div class="m-media">
+          {% if image != blank or block.settings.mobile_image != blank %}
+            <picture class="m:block m:w-full m:h-full">
+              {%- if block.settings.mobile_image != blank -%}
+                <source
+                  media="(max-width: 767px)"
+                  srcset="{{ block.settings.mobile_image | image_url: width: '400x' }} 400w, {{ block.settings.mobile_image | image_url: width: '600x' }} 600w, {{ block.settings.mobile_image | image_url: width: '800x' }} 800w, {{ block.settings.mobile_image | image_url: width: '1000x' }} 1000w"
+                  width="{{ block.settings.mobile_image.width }}"
+                  height="{{ block.settings.mobile_image.height }}"
+                >
+              {%- endif -%}
+              {% liquid
+                assign image_height = image.width | divided_by: image.aspect_ratio | round
+              %}
+              {{
+                image
+                | image_url: width: 2000
+                | image_tag:
+                  loading: loading,
+                  fetchpriority: fetchpriority,
+                  width: image.width,
+                  height: image_height,
+                  widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000',
+                  alt: image.alt
+              }}
+            </picture>
+          {% endif %}
+        </div>
+      </{% if block.settings.link %}a{% else %}div{% endif %}>
+      <div class="m-image-card__content {{ content_position }}">
+        <div class="m-richtext m-image-card__content-inner-custom">
+          {% if block.settings.title != blank %}
+            <h3 class="m-richtext__title m-image-card__heading-custom {{ heading_color }} {{ heading_size }}">{{ block.settings.title }}</h3>
+          {% endif %}
+          {% if block.settings.subtitle != blank %}
+            <p class="m-richtext__subtitle m-image-card__subheading-custom {{ subtext_size }} {{ text_color }}">{{ block.settings.subtitle }}</p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if block.settings.description != blank %}
+    <p class="m-richtext__description-custom rte m:text-color-subtext">
+      {{ block.settings.description | strip_html }}
+    </p>
+  {% endif %}
+</div>
+
