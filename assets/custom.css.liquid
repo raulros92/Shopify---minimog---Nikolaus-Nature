@@ -90,14 +90,25 @@ section .m-tab-header:after {
   font-weight: 700;
 }
 
-.ml_drops {
+.ml_drop {
   font-size: 1rem;
   line-height: 20px;
+  color: #8A8A8A;
 }
+
 
 .product-description-custom {
   font-size: 1rem;
   padding-top: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+  .ml_drop {
+    font-size: 12px;
+  }
+  .product-description-custom {
+    font-size: 12px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -180,6 +191,7 @@ section .m-tab-header:after {
 
 .content-group > h2 {
   padding-bottom: 16px;
+  font-size: 40px;
 }
 
 .content-group > p {
@@ -377,6 +389,26 @@ section .m-article-card__readmore {
   font-weight: 700;
   margin-top: 0.5rem;
 }
+
+/* Product page */
+
+.product-block-group--title-custom {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-price__regular {
+  font-weight: 700;
+}
+
+.m-product-tax-custom {
+  color: #8A8A8A;
+}
+
+.m-product-option--label {
+  display: none;
+}
+
 
 
 

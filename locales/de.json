@@ -393,7 +393,7 @@
       "on_sale": "Im Angebot",
       "from_text_html": "Von {{ price }}",
       "quantity": "Menge",
-      "add_to_cart": "In den Warenkorb legen",
+      "add_to_cart": "Zum Warenkorb hinzufügen",
       "add_to_wishlist": "Zur Wunschliste hinzufügen",
       "remove_from_wishlist": "Von der Wunschliste entfernen",
       "add_to_compare": "Vergleichen",
@@ -406,7 +406,7 @@
       "decrease_quantity": "Verringern Sie die Menge von {{ title }} um eins",
       "increase_quantity": "Erhöhen Sie die Menge von {{ title }} um eins",
       "quantity_input_label": "Menge für {{ product }}",
-      "include_taxes": "Steuern inklusive.",
+      "include_taxes": "inkl. MwSt.",
       "price": {
         "from_price_html": "Von {{ price }}",
         "regular_price": "Regulärer Preis",

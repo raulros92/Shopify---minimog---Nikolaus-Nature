@@ -137,7 +137,8 @@
       </div>
       <div class="m-main-product--info m:column {{ info_class }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
         <div class="m-product-info--wrapper m:text-color-body">
-          {% render 'main-product-blocks', section: section, product: product %}
+          {% comment %} To go back to default settings change the code below for: main-product-blocks {% endcomment %}
+          {% render 'main-product-blocks-custom', section: section, product: product %}
         </div>
       </div>
       <script id="productData" type="application/json">

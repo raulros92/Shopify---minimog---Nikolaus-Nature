@@ -82,6 +82,8 @@
                         render 'product-card-4', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
                       when '5'
                         render 'product-card-5', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
+                      when 'custom'
+                        render 'product-card-custom', product: product, index: forloop.index, animated: animated, animation_effect: animation_effect, remove_params: remove_params
                     endcase
                   %}
                 </div>
