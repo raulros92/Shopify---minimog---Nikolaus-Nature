@@ -518,11 +518,6 @@
     </div>
 
     <div class="m-product-card__content-footer">
-      {%- if show_desc -%}
-        <div class="m-product-card__description">
-          {{ product.description | strip_html | truncatewords: 15, '...' }}
-        </div>
-      {%- endif -%}
       {%- if show_quickview_button or show_wishlist_button or show_compare_button or show_cart_button -%}
         <div class="m-product-card__action">
           {% render 'product-card-quick-add-btn', product: product, quick_add_text: quick_add_text, section: section %}

@@ -66,66 +66,64 @@
       , section_settings: section.settings %}
     <m-brand-list data-enable-slider="{{ enable_slider }}" class="m-swiper-overflow m:block">
       <div class="m-mixed-layout">
-        <div class="m-brands-list__wrapper{% if enable_slider %} swiper-container swiper--equal-height{% endif %}">
-          <div class="m-brands-list__inner m:grid m:grid-2-cols md:m:grid-{{ items_per_row_tablet }}-cols lg:m:grid-{{ items_per_row }}-cols" data-wrapper>
-            {% for block in blocks %}
-              {% liquid
-                assign max_width = '100%'
-                assign image = block.settings.image
-                assign image_by_url = block.settings.image_by_url
+        <div class="m-brands-list__inner m:grid m:grid-3-cols md:m:grid-{{ items_per_row_tablet }}-cols lg:m:grid-{{ items_per_row }}-cols" data-wrapper>
+          {% for block in blocks %}
+            {% liquid
+              assign max_width = '100%'
+              assign image = block.settings.image
+              assign image_by_url = block.settings.image_by_url
 
-                if block.settings.max_width != blank
-                  assign max_width = block.settings.max_width
-                endif
+              if block.settings.max_width != blank
+                assign max_width = block.settings.max_width
+              endif
 
-                if block.settings.image_link != blank
-                  assign tag = 'a'
-                else
-                  assign tag = 'div'
-                endif
-              %}
-              <div
-                class="swiper-slide m:column"
-                data-index="{{ forloop.index0 }}"
-                {{ block.shopify_attributes }}>
-                <{{ tag }}
-                  {% if block.settings.image_link != blank %}
-                  href="{{ block.settings.image_link }}"
-                  {% endif %}
-                  class="m-brands-list__logo-custom{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %} m:blocks-radius"
-                  {% if animated %}
-                  data-cascade
-                  style="--animation-order: {{ forloop.index }};"
-                  {% endif %}
-                  >
-                  {% if image_by_url != blank %}
-                    {% comment %} theme-check-disable RemoteAsset {% endcomment %}
-                    <img
-                      src="{{ image_by_url }}"
-                      style="max-width: {{ max_width }}"
-                      width="auto"
-                      height="auto"
-                      loading="lazy"
-                      class="m-image"
-                      alt="">
-                  {% comment %} theme-check-enable RemoteAsset {% endcomment %}
-                  {% elsif image != blank %}
-                    {% render 'responsive-image'
-                      , image: image
-                      , wrapper_class: 'm:w-full'
-                      , max_width: max_width %}
-                  {% else %}
-                    {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg m:w-full m:h-full' }}
-                  {% endif %}
-                </{{ tag }}>
-                {% if block.settings.image_caption != blank %}
-                  <p class="m-image-caption">
-                    {{ block.settings.image_caption }}
-                  </p>
+              if block.settings.image_link != blank
+                assign tag = 'a'
+              else
+                assign tag = 'div'
+              endif
+            %}
+            <div
+              class="swiper-slide m:column"
+              data-index="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}>
+              <{{ tag }}
+                                                                                                                                      {% if block.settings.image_link != blank %}
+                                                                                                                                      href="{{ block.settings.image_link }}"
+                                                                                                                                      {% endif %}
+                                                                                                                                      class="m-brands-list__logo-custom{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %} m:blocks-radius"
+                                                                                                                                      {% if animated %}
+                                                                                                                                      data-cascade
+                                                                                                                                      style="--animation-order: {{ forloop.index }};"
+                                                                                                                                      {% endif %}
+                                                                                                                                      >
+                {% if image_by_url != blank %}
+                  {% comment %} theme-check-disable RemoteAsset {% endcomment %}
+                  <img
+                    src="{{ image_by_url }}"
+                    style="max-width: {{ max_width }}"
+                    width="auto"
+                    height="auto"
+                    loading="lazy"
+                    class="m-image"
+                    alt="">
+                {% comment %} theme-check-enable RemoteAsset {% endcomment %}
+                {% elsif image != blank %}
+                  {% render 'responsive-image'
+                    , image: image
+                    , wrapper_class: 'm:w-full'
+                    , max_width: max_width %}
+                {% else %}
+                  {{ 'image' | placeholder_svg_tag: 'm-placeholder-svg m:w-full m:h-full' }}
                 {% endif %}
-              </div>
-            {% endfor %}
-          </div>
+              </{{ tag }}>
+              {% if block.settings.image_caption != blank %}
+                <p class="m-image-caption">
+                  {{ block.settings.image_caption }}
+                </p>
+              {% endif %}
+            </div>
+          {% endfor %}
         </div>
       </div>
     </m-brand-list>

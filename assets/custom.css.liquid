@@ -60,6 +60,77 @@ header .m-mega-menu {
   }
 }
 
+/* Slideshow */
+
+.m-slide__description {
+  font-size: 1.5rem;
+}
+
+.m-dot:hover {
+  color: #F39200;
+}
+
+.m-dot--active::after {
+  background: #65B235;
+}
+
+.m-dot--active::before {
+  background: #F39200;
+}
+
+/* Brands custom */
+
+  .brands-custom-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .brands-custom-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 0;
+    margin: 0px 20px;
+    border-radius: 50px;
+    transition: transform 0.2s ease;
+    box-shadow: 0.2s ease;
+  }
+
+  .brands-custom-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .brands-custom-text {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+   @media screen and (max-width: 768px) {
+
+    .brands-custom-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .brands-custom-box {
+      width: 90%;
+      padding: 20px;
+      margin: 10px;
+    }
+
+    .brands-custom-text {
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+
+    .brands-custom-logo {
+      max-height: 50px;
+      max-width: 50px;
+    }
+  }
+
 /* Product tabs */
 
 .m-tab-header {
@@ -372,6 +443,31 @@ section .m-article-card__readmore {
   font-weight: 700 !important;
 }
 
+/* Collection-page-header */
+
+.blurred-container {
+  max-width: 700px;
+  backdrop-filter: blur(15px);
+  background: rgba(243, 239, 236, 0.43);
+  border-radius: 45px;
+  margin: 20px;
+}
+
+.m-hero__title {
+  font-weight: 700;
+}
+
+.m-collection-page-header__description {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+.m-collection-page-header__description {
+  font-size: 1rem;
+  }
+}
+
+
 /* Icons Custom */
 
 .m-brands-list__logo-custom {
@@ -388,6 +484,13 @@ section .m-article-card__readmore {
   color: #484848;
   font-weight: 700;
   margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .m-brands-list__inner-custom-responsive {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Product page */
@@ -408,8 +511,6 @@ section .m-article-card__readmore {
 .m-product-option--label {
   display: none;
 }
-
-
 
 
 

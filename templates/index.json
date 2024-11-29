@@ -117,6 +117,34 @@
         "animations": "fade-in-left"
       }
     },
+    "brands_custom_RHzhmH": {
+      "type": "brands-custom",
+      "blocks": {
+        "brand_79wgp6": {
+          "type": "brand",
+          "settings": {
+            "text": "Für mich",
+            "link": "shopify://collections/all-types",
+            "background_color": "#d4ebd4",
+            "default_svg": "green-logo"
+          }
+        },
+        "brand_pMkTdc": {
+          "type": "brand",
+          "settings": {
+            "text": "Für mein Tier",
+            "link": "shopify://collections/frontpage",
+            "background_color": "#e3d3ba",
+            "default_svg": "orange-logo"
+          }
+        }
+      },
+      "block_order": [
+        "brand_79wgp6",
+        "brand_pMkTdc"
+      ],
+      "settings": {}
+    },
     "162251092958fcda7c": {
       "type": "product-tabs",
       "blocks": {
@@ -847,6 +875,7 @@
   },
   "order": [
     "1621243260e1af0c20",
+    "brands_custom_RHzhmH",
     "162251092958fcda7c",
     "image_with_text_1_z9bbq3",
     "collapsible_tabs_custom_UGkdzq",

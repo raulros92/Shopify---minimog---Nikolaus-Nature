@@ -131,24 +131,27 @@
             }}
           </div>
         {% endif %}
-        <div class="m-collection-page-header__inner m-section-py m:text-{{ text_color }} m:text-{{ text_alignment }}">
-          {% if show_breadcrumb and layout == 'inside' %}
-            {% assign justify = text_alignment | replace: 'right', 'end' | replace: 'left', 'start' %}
-            {% render 'breadcrumb',
-              container: '',
-              justify: justify,
-              animated: animated,
-              animation_effect: animation_effect
-            %}
-          {% endif %}
-          <h1 class="m-collection-page-header__title h2 {{ heading_color }}{% if section.settings.upper_title %} m:uppercase{% else %} m:capitalize{% endif %}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-            {{ collection.title }}
-          </h1>
-          {% if section.settings.show_desc and collection_desc != blank %}
-            <div class="m-collection-page-header__description rte {{ desc_color }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
-              {{ collection_desc }}
-            </div>
-          {% endif %}
+        {% comment %} Custom container to create the blur effect {% endcomment %}
+        <div class="blurred-container">
+          <div class="m-collection-page-header__inner m-section-py m:text-{{ text_color }} m:text-{{ text_alignment }}">
+            {% if show_breadcrumb and layout == 'inside' %}
+              {% assign justify = text_alignment | replace: 'right', 'end' | replace: 'left', 'start' %}
+              {% render 'breadcrumb',
+                container: '',
+                justify: justify,
+                animated: animated,
+                animation_effect: animation_effect
+              %}
+            {% endif %}
+            <h1 class="m-collection-page-header__title h2 {{ heading_color }}{% if section.settings.upper_title %} m:uppercase{% else %} m:capitalize{% endif %}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+              {{ collection.title }}
+            </h1>
+            {% if section.settings.show_desc and collection_desc != blank %}
+              <div class="m-collection-page-header__description rte {{ desc_color }}{% if animated %} m-scroll-trigger animate--{{ animation_effect }}{% endif %}">
+                {{ collection_desc }}
+              </div>
+            {% endif %}
+          </div>
         </div>
       </div>
     </div>
