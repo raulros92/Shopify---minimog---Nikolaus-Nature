@@ -130,6 +130,11 @@
       </div>
     </div>
   </div>
+  <div class="link-image-card-custom">
+    {% if block.settings.link-image != blank %}
+      <a href="{{ block.settings.link-image }}">{{ block.settings.link-image }}</a>
+    {% endif %}
+  </div>
   {% if block.settings.description != blank %}
     <p class="m-richtext__description-custom rte m:text-color-subtext">
       {{ block.settings.description | strip_html }}
